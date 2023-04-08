@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<graphics.h>
+void main(void)
+{
+	int gdriver=DETECT,gmode,errorcode,i;
+	/* auto-detect the driver and mode*/
+	initgraph(&gdriver,&gmode," ");
+	errorcode=graphresult();// check for any errors
+	if(errorcode!=grOk)
+	{
+		printf("Graphics error:%s\n",grapherrormsg(errorcode));
+		printf("Press any key to halt:");
+		getch();
+		exit(0);
+	}
+	else
+	for(i=0;i<16;i++)
+	{
+		setbkcolor(i);
+		printf("\t\t\t Press any key to continue\n\n ");
+		getch();
+	}
+	printf("Press any key to close");
+	closegraph();
+  }
